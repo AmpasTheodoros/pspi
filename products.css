@@ -1,3 +1,138 @@
 /* BEGIN CODE HERE */
+* {
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Arial;
+  background: #f1f1f1;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 150px;
+  padding: 30px;
+  background: #ddd;
+}
+
+.logo {
+  flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.logo img {
+  height: 58px;
+  width: 250px;
+}
+
+.header-links {
+  display: flex;
+  gap: 10px; /* Adjust the gap between the links */
+}
+
+.header-links a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2164f3;
+}
+
+.header-links a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the "active" element to highlight the current page */
+.header-links a.active {
+  background-color: #2164f3;
+  color: white;
+  border-radius: 10%;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+.frame {
+  width: 1200px;
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.topnav p {
+  margin: 0;
+  color: black;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 30px;
+}
+
+.topnav input[type="text"] {
+  padding: 12px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 30px;
+  border: none;
+}
+
+.topnav .search-container button {
+  padding: 12px;
+  margin-top: 8px;
+  background: #2b64cf;
+  color: white;
+  font-size: 30px;
+  border: none;
+  border-radius: 0 10% 10% 0;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 25px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 15px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#submit {
+  background-color:#2164f3;
+  margin:20px 0;
+  border:none;
+  font-size: 25px;
+  color:white;
+  border-radius: 10%;
+  padding: 10px;
+}
+
+.footer {
+  padding: 20px;
+  height: 100px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
 /* END CODE HERE */
