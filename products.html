@@ -9,95 +9,86 @@
   </head>
   <body>
     <!-- BEGIN CODE HERE -->
-    <!-- Header -->
-    <div class="header">
-      <div class="logo">
-        <!-- Insert your logo here -->
-        <img src="logo.png" alt="Logo">
-      </div>
-      <div class="header-links">
-        <a href="homepage.html">Home</a>
-        <a class="active" href="products.html">Products</a>
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">
+      <!-- Insert your logo here -->
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div class="header-links">
+      <a href="homepage.html">Home</a>
+      <a class="active" href="products.html">Products</a>
+    </div>
+  </div>
+  <!-- /Header -->
+
+  <!-- Frame 1 -->
+  <div class="frame">
+    <div class="topnav">
+      <p>Select a product</p>
+      <div class="search-container">
+        <input id="searchInput" type="text" placeholder="Search.." name="search">
+        <button id="searchButton" type="button" onclick="searchButtonOnClick()">Submit</button>
       </div>
     </div>
-    <!-- /Header -->
-    <!-- Frame 1 -->
-    <div class="frame">
+    <h1 id="searchResultsTitle">Results:</h1>
+    <table id="searchResultsTable">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Production</th>
+        <th>Price</th>
+        <th>Color</th>
+        <th>Size</th>
+      </tr>
+    </table>
+  </div>
+  <!-- /Frame 1 -->
+
+  <!-- Frame 2 -->
+  <div class="frame">
+    <h1 id="addProductTitle">Add a product</h1>
+    <form id="addProductForm" onsubmit="productFormOnSubmit(event)">
       <div class="topnav">
-        <p>Select a product</p>
+        <p>Name</p>
         <div class="search-container">
-          <form action="/action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit">Submit</button>
-          </form>
+          <input id="nameInput" type="text" placeholder="Enter name" name="name">
         </div>
       </div>
-        <h1>Results:</h1>
-        <table>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Production</th>
-            <th>Price</th>
-            <th>Color</th>
-            <th>Size</th>
-          </tr>
-          <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-          </tr>
-        </table>
-    </div>
-    <!-- /Frame 1 -->
+      <div class="topnav">
+        <p>Production year</p>
+        <div class="search-container">
+          <input id="productionInput" type="text" placeholder="Enter production year" name="production">
+        </div>
+      </div>
+      <div class="topnav">
+        <p>Price</p>
+        <div class="search-container">
+          <input id="priceInput" type="text" placeholder="Enter price" name="price">
+        </div>
+      </div>
+      <div class="topnav">
+        <p>Color</p>
+        <div class="search-container">
+          <input id="colorInput" type="text" placeholder="Enter color" name="color">
+        </div>
+      </div>
+      <div class="topnav">
+        <p>Size</p>
+        <div class="search-container">
+          <input id="sizeInput" type="text" placeholder="Enter size" name="size">
+        </div>
+      </div>
+      <input id="submit" type="submit" value="Submit">
+    </form>
+  </div>
+  <!-- /Frame 2 -->
 
-    <!-- Frame 2 -->
-    <div class="frame">
-      <h1 id="title"> Add a product </h1>
-      <form action="/action_page.php">
-        <div class="topnav">
-          <p>Name</p>
-          <div class="search-container">
-            <input type="text" placeholder="Search.." name="search">
-          </div>
-        </div>
-        <div class="topnav">
-          <p>Production year</p>
-          <div class="search-container">
-            <input type="text" placeholder="Search.." name="search">
-          </div>
-        </div>
-        <div class="topnav">
-          <p>Price</p>
-          <div class="search-container">
-            <input type="text" placeholder="Search.." name="search">
-          </div>
-        </div>
-        <div class="topnav">
-          <p>Color</p>
-          <div class="search-container">
-            <input type="text" placeholder="Search.." name="search">
-          </div>
-        </div>
-        <div class="topnav">
-          <p>Size</p>
-          <div class="search-container">
-            <input type="text" placeholder="Search.." name="search">
-          </div>
-        </div>
-        <input id="submit" type="submit" value="Submit">
-      </form>
-    </div>
-    <!-- /Frame 2 -->
-
-    <!-- Footer -->
-    <div class="footer">
-      <h2>Footer</h2>
-    </div>
-    <!-- /Footer -->
+  <!-- Footer -->
+  <div class="footer">
+    <h2>Footer</h2>
+  </div>
+  <!-- /Footer -->
 
     <!-- END CODE HERE -->
     <script src="products.js"></script>
