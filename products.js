@@ -2,40 +2,8 @@ const api = "http://127.0.0.1:5000";
 
 window.onload = () => {
   // BEGIN CODE HERE
-  fetch(`${api}/search`)
-    .then(response => response.json())
-    .then(data => {
-      const table = document.getElementById("searchResultsTable");
-      table.innerHTML = `
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Production</th>
-          <th>Price</th>
-          <th>Color</th>
-          <th>Size</th>
-        </tr>
-      `;
-
-      data.forEach(product => {
-        table.innerHTML += `
-          <tr>
-            <td>${product.id}</td>
-            <td>${product.name}</td>
-            <td>${product.production}</td>
-            <td>${product.price}</td>
-            <td>${product.color}</td>
-            <td>${product.size}</td>
-          </tr>
-        `;
-      });
-
-      const searchResultsTitle = document.getElementById("searchResultsTitle");
-      searchResultsTitle.textContent = "Search Results:";
-    })
-    .catch(error => {
-      console.error("Error:", error);
-    });
+  // Code to execute when the window is loaded
+  // For example, you can fetch initial data or perform any necessary setup
   // END CODE HERE
 };
 
@@ -109,42 +77,8 @@ productFormOnSubmit = (event) => {
     .then(data => {
       console.log("Success:", data);
       alert("Product added successfully");
+      // Reset the form
       document.getElementById("addProductForm").reset();
-
-      fetch(`${api}/search`)
-        .then(response => response.json())
-        .then(data => {
-          const table = document.getElementById("searchResultsTable");
-          table.innerHTML = `
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Production</th>
-              <th>Price</th>
-              <th>Color</th>
-              <th>Size</th>
-            </tr>
-          `;
-
-          data.forEach(product => {
-            table.innerHTML += `
-              <tr>
-                <td>${product.id}</td>
-                <td>${product.name}</td>
-                <td>${product.production}</td>
-                <td>${product.price}</td>
-                <td>${product.color}</td>
-                <td>${product.size}</td>
-              </tr>
-            `;
-          });
-
-          const searchResultsTitle = document.getElementById("searchResultsTitle");
-          searchResultsTitle.textContent = "Search Results:";
-        })
-        .catch(error => {
-          console.error("Error:", error);
-        });
     })
     .catch(error => {
       console.error("Error:", error);
