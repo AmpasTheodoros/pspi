@@ -5,7 +5,7 @@ from flask_cors import CORS
 from pymongo import TEXT
 import numpy as np
 from selenium import webdriver
-# BEGIN CODE HERE
+# END CODE HERE
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://127.0.0.1:27017/pspi"
@@ -56,9 +56,25 @@ def content_based_filtering():
 @app.route("/crawler", methods=["GET"])
 def crawler():
     # BEGIN CODE HERE
-    driver = webdriver.Chrome()  
-    driver.quit()
-    return jsonify({"message": "Crawling completed"})
+    try:
+        semester = request.args.get("semester")
+        url = "https://qa.auth.gr/el/x/studyguide/600000438/current"
+        options = webdriver.Chrome.options.Options()
+        # does not apper as window
+        options.headless = True
+        # setting a chrome browser
+        driver = webdriver.Chrome(options=options)
+        # goes to the specified url
+        driver.get(url)
+        driver.switch_to.frame(driver.find_element(webdriver.common.by.By.ID, "exams" + str(semester)))
+        driver.switch_to.frame("2")
+        res = []
+        for element in driver.find_elements(webdriver.common.by.By.xpath("./child::*")):
+            #takes the text from the paragraph tags
+            res.append(element.get_attribute("coursetitle"))
+        return jsonify(res)
+    except Exception:
+        return "BAD REQUEST", 400
     # END CODE HERE
 
 if __name__ == "__main__":
